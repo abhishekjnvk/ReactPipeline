@@ -1,6 +1,6 @@
 import React from 'react';
 import 'tachyons';
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import '../assetes/Loading.css'
 
@@ -9,8 +9,8 @@ import '../assetes/Loading.css'
 
 export default function CourseCard(props) {
     return (
-        <div className="col-lg-3 mx-auto p-3  single_course text-center border border-dark py-5 p-5 br4 bg-dark-blue">
-            <div className="">
+        <div className="col-lg-4 mx-auto p-3  ">
+            <div className="col-lg-8 mx-auto single_course text-center border border-dark py-5 p-5 br4 bg-dark-blue">
                 <div className="icon">
                     <img src={props.src} alt="" style={{ minWidth: 50, maxWidth: 250, minHeight: 150, maxHeight: 250, flex: 1 }} />
                 </div>
@@ -110,4 +110,55 @@ export function Loading() {
             src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif" alt="avatar"/> */}
         </div >
     );
+}
+
+export function Footer() {
+    return (
+        <footer className="footer footer_bg_1">
+            <div className="footer_top">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-5 mx-auto col-md-6 col-lg-4">
+                            <div className="footer_widget">
+                                <div className="footer_logo">
+                                    <a href="#">
+                                        <img src="img/logo.png" alt="" />
+                                    </a>
+                                </div>
+                                <p>
+                                    Firmament morning sixth subdue darkness creeping gathered divide our let god moving.
+                                    Moving in fourth air night bring upon it beast let you dominion likeness open place day
+                                    great.
+                            </p>
+
+                            </div>
+                        </div>
+                        <div className="col-xl-2 mx-auto col-md-6 col-lg-2">
+                            <div className="footer_widget">
+                                <h3 className="footer_title">
+                                    Links
+                            </h3>
+                                <ul>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="courses">All Courses</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="copy-right_text">
+                <div className="container">
+                    <div className="footer_border"></div>
+                    <div className="row">
+                        <div className="col-xl-12">
+                            <p className="copy_right text-center">
+                                Copyright ©{(new Date().getFullYear())} All rights reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
 }

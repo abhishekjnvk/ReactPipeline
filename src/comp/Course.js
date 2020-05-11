@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Nav';
 import CourseCard from './Components';
-import { Header, Loading } from './Components';
+import { Header, Loading, Footer } from './Components';
 
 
 export default class Courses extends Component {
@@ -28,7 +28,6 @@ export default class Courses extends Component {
         if (response.response) {
           this.setState({ course: response.course })
           this.setState({ loading: false })
-
         }
         else {
           alert(response.message)
@@ -44,13 +43,12 @@ export default class Courses extends Component {
     if (this.state.loading) {
       { this.login() }
       return (<div>
-
-
         <Navbar />
         <div className="slider_area ">
-
+          <Header title={"All Courses"} />
           <Loading />
-        </div></div>)
+        </div>
+      </div>)
     }
     else
       return (
@@ -62,7 +60,7 @@ export default class Courses extends Component {
             <Header title={"All Courses"} />
 
           </div>
-          <div className="container-fluid mt-3 row">
+          <div className="container-fluid mx-auto mt-3 row">
             {
               this.state.course.map(function (course, i) {
                 return <CourseCard CourseName={course.Course_Name} shortDetail={course.ShortDescription} src={course.Poster} link={course._id} key={i} />
@@ -71,6 +69,7 @@ export default class Courses extends Component {
             }
 
           </div>
+          <Footer />
           {/* {console.log(this.props.match.params.id)} */}
         </div >
       );

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { HashRouter } from 'react-router-dom'
+import { Link } from "react-router-dom";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +16,6 @@ import CoursePage from './comp/CoursePage';
 
 class App extends Component {
   render() {
-
     return (
       <Router>
         <div>
@@ -21,21 +23,24 @@ class App extends Component {
             <Route exact path="/logout">
               <Logout />
             </Route>
-            <Route exact path="/" >
+            <Route path="/" >
               <IfLoggedIN cmp={Home} />
             </Route>
-            <Route exact path="/dashboard" >
+            <Route path="/dashboard" >
               <CheckLogin cmp={Dashboard} />
             </Route>
-            <Route exact path="/profile" >
+            <Route path="/profile" >
               <CheckLogin cmp={Profile} />
             </Route>
 
-            <Route exact path="/view/:id" component={CoursePage} />
+            <Route path="/view/:id" component={CoursePage} />
 
-            <Route exact path="/courses" >
+            <Route path="/courses" >
               <Courses />
             </Route>
+
+
+            <Route path="*" component={Home} />
 
           </Switch>
 

@@ -184,10 +184,10 @@ export default class Navbar extends Component {
                                         </div>
                                         <div className="col-xl-3 col-lg-3 d-none d-lg-block">
                                             <div className="log_chat_area d-flex align-items-center">
-                                                 <Link to="#test-form" className="login popup-with-form">
+                                                 <a href="#test-form" className="login popup-with-form">
                                                     <i className="flaticon-user"></i>
                                                     <span>log in</span>
-                                                </Link>
+                                                </a>
                                             </div>
                                         </div>
                                         <div className="col-12">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Nav';
 import CourseCard from './Components';
-import {Header,Loading} from './Components';
+import { Header, Loading } from './Components';
 
 
 export default class Courses extends Component {
@@ -43,11 +43,19 @@ export default class Courses extends Component {
   render() {
     if (this.state.loading) {
       { this.login() }
-      return (<div><Loading/></div>)
+      return (<div>
+
+
+        <Navbar />
+        <div className="slider_area ">
+
+          <Loading />
+        </div></div>)
     }
     else
       return (
         <div>
+
           <Navbar />
           <div className="slider_area ">
 
@@ -57,7 +65,7 @@ export default class Courses extends Component {
           <div className="container-fluid mt-3 row">
             {
               this.state.course.map(function (course, i) {
-                return <CourseCard CourseName={course.Course_Name} shortDetail={course.ShortDescription} src={course.Poster} link={course._id} key={i}/>
+                return <CourseCard CourseName={course.Course_Name} shortDetail={course.ShortDescription} src={course.Poster} link={course._id} key={i} />
                 // <span key={course.Course_Name}>{course.Course_Name}</span>
               })
             }

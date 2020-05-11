@@ -20,27 +20,25 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" >
-              <IfLoggedIN cmp={Home} />
-            </Route>
             <Route exact path="/logout">
               <Logout />
             </Route>
-            <Route path="/dashboard" >
+            <Route exact path="/" >
+              <IfLoggedIN cmp={Home} />
+            </Route>
+            <Route exact path="/dashboard" >
               <CheckLogin cmp={Dashboard} />
             </Route>
-            <Route path="/profile" >
+            <Route exact path="/profile" >
               <CheckLogin cmp={Profile} />
             </Route>
 
-            <Route path="/view/:id" component={CoursePage} />
+            <Route exact path="/view/:id" component={CoursePage} />
 
-            <Route path="/courses" >
+            <Route exact path="/courses" >
               <Courses />
             </Route>
-
-
-            <Route path="*" component={Home} />
+            {/* <Route path="*" component={Home} /> */}
 
           </Switch>
 

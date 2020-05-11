@@ -1,7 +1,6 @@
 import React from 'react';
 import 'tachyons';
-import { Spinner } from 'react-bootstrap';
-import 'tachyons';
+import {Link } from "react-router-dom";
 
 import '../assetes/Loading.css'
 
@@ -19,7 +18,7 @@ export default function CourseCard(props) {
                 <p className='text-white'>
                     {props.shortDetail}
                 </p>
-                <a className="f6 link dim br1 ph3 pv2 mb2 dib white bg-hot-pink" href={'view/' + props.link}>Learn More</a>
+                <Link className="f6 link dim br1 ph3 pv2 mb2 dib white bg-hot-pink" to={'view/' + props.link}>Learn More</Link>
 
             </div>
         </div>)

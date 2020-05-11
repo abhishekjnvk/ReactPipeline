@@ -20,11 +20,11 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
+            <Route exact path="/" >
+              <IfLoggedIN cmp={Home} />
+            </Route>
             <Route exact path="/logout">
               <Logout />
-            </Route>
-            <Route path="/" >
-              <IfLoggedIN cmp={Home} />
             </Route>
             <Route path="/dashboard" >
               <CheckLogin cmp={Dashboard} />

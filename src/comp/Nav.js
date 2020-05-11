@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link } from "react-router-dom";
 import 'tachyons';
+import { Redirect } from "react-router-dom";
 
 
 
@@ -39,7 +40,7 @@ export default class Navbar extends Component {
                     if (response.token) {
                         console.log(response.token);
                         localStorage.setItem("Token", JSON.stringify(response));
-                        window.location = "/dashboard"
+                        return <Redirect to='dashboard' />
                     }
                     else {
                         alert(response.message)
@@ -77,17 +78,8 @@ export default class Navbar extends Component {
                     .then((responseText) => {
                         var response = JSON.parse(responseText)
                         if (response.response) {
-                            // $.confirm({
-                            //     title: 'Confirm!',
-                            //     content: response.message,
-                            //     buttons: {
-                            //         'Okay': function () {
-                            //             window.location = '/'
-                            //         }
-                            //     }
-                            // });
                             alert(response.message);
-                            window.location='/';
+                            return <Redirect to='/' />
                         } else { alert(response.message) }
                     })
                     .catch((error) => {

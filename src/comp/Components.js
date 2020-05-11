@@ -19,7 +19,7 @@ export default function CourseCard(props) {
                 <p className='text-white'>
                     {props.shortDetail}
                 </p>
-                <a class="f6 link dim br1 ph3 pv2 mb2 dib white bg-hot-pink" href={'view/' + props.link}>Learn More</a>
+                <a className="f6 link dim br1 ph3 pv2 mb2 dib white bg-hot-pink" href={'view/' + props.link}>Learn More</a>
 
             </div>
         </div>)
@@ -103,8 +103,8 @@ export function CourseDetail(props) {
 
 export function Loading() {
     return (
-        <div class="pa4 tc mt7">
-            <div class="loadingio-spinner-ripple-0v3oh6mzkud"><div class="ldio-vdu6f5do0l">
+        <div className="pa4 tc mt7">
+            <div className="loadingio-spinner-ripple-0v3oh6mzkud"><div className="ldio-vdu6f5do0l">
                 <div></div><div></div>
             </div></div>
             {/* <img

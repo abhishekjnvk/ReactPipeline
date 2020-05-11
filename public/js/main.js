@@ -69,14 +69,14 @@ autoplaySpeed: 800,
 
 // for filter
   // init Isotope
-  var $grid = $('.grid').isotope({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    masonry: {
-      // use outer width of grid-sizer for columnWidth
-      columnWidth: 1
-    }
-  });
+  // var $grid = $('.grid').isotope({
+  //   itemSelector: '.grid-item',
+  //   percentPosition: true,
+  //   masonry: {
+  //     // use outer width of grid-sizer for columnWidth
+  //     columnWidth: 1
+  //   }
+  // });
 
   // filter items on button click
   $('.portfolio-menu').on('click', 'button', function () {
@@ -92,7 +92,7 @@ autoplaySpeed: 800,
 	});
   
   // wow js
-  new WOW().init();
+  // new WOW().init();
 
   // counter 
   $('.counter').counterUp({

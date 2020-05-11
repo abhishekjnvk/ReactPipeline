@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import $ from "jquery";
-// import 'jquery-confirm/dist/jquery-confirm.min.css';
+import {Link } from "react-router-dom";
 import 'tachyons';
 
 
@@ -115,34 +114,34 @@ export default class Navbar extends Component {
                                     <div className="row align-items-center no-gutters">
                                         <div className="col-xl-2 col-lg-2">
                                             <div className="logo-img">
-                                                <a href="/dashboard">
+                                                 <Link to="/dashboard">
                                                     <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="" />
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="col-xl-7 col-lg-7">
                                             <div className="main-menu  d-none d-lg-block">
                                                 <nav>
                                                     <ul id="navigation">
-                                                        <li><a className="active" href="/dashboard">Dashboard</a></li>
-                                                        <li><a className="active" href="/courses">Courses</a></li>
-                                                        {/* <li><a href="#">My Courses <i className="ti-angle-down"></i></a>
+                                                        <li> <Link className="active" to="/dashboard">Dashboard</Link></li>
+                                                        <li> <Link className="active" to="/courses">Courses</Link></li>
+                                                        {/* <li> <Link to="#">My Courses <i className="ti-angle-down"></i></Link>
                                                             <ul className="submenu">
-                                                                <li><a href="courses">Active</a></li>
-                                                                <li><a href="archived">Archived</a></li>
+                                                                <li> <Link to="courses">Active</Link></li>
+                                                                <li> <Link to="archived">Archived</Link></li>
                                                             </ul>
                                                         </li> */}
-                                                        <li><a className="active" href="/profile">Profile</a></li>
+                                                        <li> <Link className="active" to="/profile">Profile</Link></li>
                                                     </ul>
                                                 </nav>
                                             </div>
                                         </div>
                                         <div className="col-xl-3 col-lg-3 d-none d-lg-block">
                                             <div className="log_chat_area d-flex align-items-center">
-                                                <a href="/logout" className="login">
+                                                 <Link to="/logout" className="login">
                                                     <i className="flaticon-user"></i>
                                                     <span>log Out</span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="col-12">
@@ -168,27 +167,27 @@ export default class Navbar extends Component {
                                     <div className="row align-items-center no-gutters">
                                         <div className="col-xl-2 col-lg-2">
                                             <div className="logo-img">
-                                                <a href="/dashboard">
+                                                 <Link to="/dashboard">
                                                     <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="" />
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="col-xl-7 col-lg-7">
                                             <div className="main-menu  d-none d-lg-block">
                                                 <nav>
                                                     <ul id="navigation">
-                                                        <li><a className="active" href="/">home</a></li>
-                                                        <li><a className="active" href="/courses">Courses</a></li>
+                                                        <li> <Link className="active" to="/">home</Link></li>
+                                                        <li> <Link className="active" to="/courses">Courses</Link></li>
                                                     </ul>
                                                 </nav>
                                             </div>
                                         </div>
                                         <div className="col-xl-3 col-lg-3 d-none d-lg-block">
                                             <div className="log_chat_area d-flex align-items-center">
-                                                <a href="#test-form" className="login popup-with-form">
+                                                 <Link to="#test-form" className="login popup-with-form">
                                                     <i className="flaticon-user"></i>
                                                     <span>log in</span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                         <div className="col-12">
@@ -204,9 +203,9 @@ export default class Navbar extends Component {
                         <div className="popup_box ">
                             <div className="popup_inner">
                                 <div className="logo text-center">
-                                    <a href="#">
+                                     <Link to="#">
                                         <img src={process.env.PUBLIC_URL + 'img/form-logo.png'} alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <h3>Sign in</h3>
                                 <div className="row">
@@ -220,7 +219,7 @@ export default class Navbar extends Component {
                                         <button type="submit" className="boxed_btn_orange text-dark" onClick={() => this.login()}>Sign in</button>
                                     </div>
                                 </div>
-                                <p className="doen_have_acc">Don’t have an account? <a className="dont-hav-acc" href="#test-form2">Sign Up</a>
+                                <p className="doen_have_acc">Don’t have an account?  <Link className="dont-hav-acc" to="#test-form2">Sign Up</Link>
                                 </p>
                             </div>
                         </div>
@@ -230,9 +229,9 @@ export default class Navbar extends Component {
                         <div className="popup_box ">
                             <div className="popup_inner">
                                 <div className="logo text-center">
-                                    <a href="#">
+                                     <Link to="#">
                                         <img src={process.env.PUBLIC_URL + 'img/form-logo.png'} alt="" />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <h3>Registration</h3>
                                 <div className="row">

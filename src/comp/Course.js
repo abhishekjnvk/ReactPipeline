@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Navbar from './Nav';
 import CourseCard from './Components';
 import {Header,Loading} from './Components';
-// import $ from 'jquery';
-// require ('jquery-confirm');
-// import 'jquery-confirm/dist/jquery-confirm.min.css';
 
 
 export default class Courses extends Component {

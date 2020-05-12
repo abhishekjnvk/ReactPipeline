@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from './Nav';
 import { Header, Footer, ShowAlert } from './Components';
 import { Button } from 'react-bootstrap';
-// import { Redirect } from "react-router-dom";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
@@ -30,6 +29,7 @@ export default class Auth extends Component {
     if (!password || !email) {
       this.setState({ alert_title: "Failed", alert_message: 'Please Fill All Felids', alert: true })
     } else {
+      this.setState({ alert_title: "Loading", alert_message: 'Please Wait, While we are verifying you', alert: true })
       fetch("https://edumark.herokuapp.com/users/login?", {
         method: 'POST',
         headers: {
@@ -46,10 +46,10 @@ export default class Auth extends Component {
           if (response.token) {
             // console.log(response.token);
 
-            cookies.set('Token',response.token , { path: '/' });
-            cookies.set('LoginMessage',JSON.stringify(response) , { path: '/' });
+            cookies.set('Token', response.token, { path: '/' });
+            cookies.set('LoginMessage', JSON.stringify(response), { path: '/' });
             console.log("LoggedIN")
-            window.location='/';
+            window.location = '/';
           }
           else {
             this.setState({ alert_title: "Failed", alert_message: response.message, alert: true })
@@ -61,6 +61,7 @@ export default class Auth extends Component {
     }
     return false;
   }
+
   signup() {
     this.setState({ alert: false })
     let email = this.state.signup_email;
@@ -72,7 +73,7 @@ export default class Auth extends Component {
       this.setState({ alert_title: "Failed", alert_message: 'Please Fill All Felids', alert: true })
     } else {
       if (password === password2 && password.length > 5) {
-
+        this.setState({ alert_title: "Loading", alert_message: 'Please Wait, While we are verifying you', alert: true })
         fetch("https://edumark.herokuapp.com/users/register?", {
           method: 'POST',
           headers: {
@@ -90,7 +91,7 @@ export default class Auth extends Component {
             if (response.response) {
               this.setState({ alert_title: "Success", alert_message: response.message, alert: true })
 
-              alert("response.message")
+              alert(response.message)
 
               // return <Redirect to='/' />
             } else {

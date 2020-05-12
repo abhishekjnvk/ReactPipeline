@@ -13,6 +13,7 @@ export default class Profile extends Component {
         this.state = {
             email: '',
             name: '',
+            date: '',
             loading: true
         };
     }
@@ -36,7 +37,9 @@ export default class Profile extends Component {
             })
             .then(data => {
                 // console.log(data.authData.user)
-                this.setState({ loading: false, name: data.authData.user.name, email: data.authData.user.email, userType: data.authData.user.userType })
+                var datesince = (data.authData.user.date).substring(0, 10);
+
+                this.setState({ loading: false, name: data.authData.user.name, email: data.authData.user.email, userType: data.authData.user.userType, date: datesince })
             })
     }
     render() {
@@ -78,6 +81,14 @@ export default class Profile extends Component {
                                     </label>
                         </div>
                         <input type="text" className="single-input border rounded" value={this.state.userType} disabled />
+                    </div>
+                    <div className="mt-10">
+                        <div className="ml-2 text-left">
+                            <label className="text-dark">
+                                Member since
+                                    </label>
+                        </div>
+                        <input type="text" className="single-input border rounded" value={this.state.date} disabled />
                     </div>
                 </div>
                 {/* </div> */}

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
 
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 export function CheckLogin(props) {
-    var token = localStorage.getItem("Token");
+    var token =cookies.get('Token');
     // console.log(token)
     if (token == null) {
         return <Redirect to='/' />
@@ -13,7 +16,7 @@ export function CheckLogin(props) {
 }
 
 export function IfLoggedIN(props) {
-    var token = localStorage.getItem("Token");
+    var token = cookies.get('Token');
     if (token != null) {
         return <Redirect to='dashboard' />
     }

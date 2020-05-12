@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Nav';
-import { CourseDetailHeader, CourseDetail,Loading } from './Components';
+import { CourseDetailHeader, CourseDetail, Loading,Header,Footer } from './Components';
 
 export default class CoursePage extends Component {
     state = {
@@ -37,19 +37,29 @@ export default class CoursePage extends Component {
     render() {
         if (this.state.loading) {
             return <div>
-                <Loading/>
-              {this.fetchCourse()}</div>
+
+                <Navbar />
+                <div className="slider_area ">
+                    <Header title={"All Courses"} />
+                    <Loading />
+                    <Footer />
+
+                    <Loading />
+                    {this.fetchCourse()}</div>
+            </div>
         }
         return (
             <div>
                 <Navbar />
                 <div className="slider_area ">
                     <CourseDetailHeader detail={this.state.courseDetail} />
-                    <CourseDetail  detail={this.state.courseDetail} />
+                    <CourseDetail detail={this.state.courseDetail} />
                     <div>
 
                     </div>
                 </div>
+                <Footer />
+
             </div>
         );
     }

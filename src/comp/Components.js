@@ -9,10 +9,10 @@ import '../assetes/Loading.css'
 
 export default function CourseCard(props) {
     return (
-        <div className="col-lg-4 mx-auto p-3  ">
-            <div className="col-lg-8 mx-auto single_course text-center border border-dark py-5 p-5 br4 bg-dark-blue">
+        <div className="col-lg-4 col-md-6 mx-auto p-3  ">
+            <div className="col-lg-8 col-sm-12 col-md-12 mx-auto single_course text-center border border-dark py-5 p-5 br4 bg-dark-blue">
                 <div className="icon">
-                    <img src={props.src} alt="" style={{ minWidth: 50, maxWidth: 250, minHeight: 150, maxHeight: 250, flex: 1 }} />
+                    <img src={props.src} alt="" style={{ minWidth: 50, maxWidth: '100%', minHeight: 150, maxHeight: 250, flex: 1 }} />
                 </div>
                 <h3 className="text-white mt-4">{props.CourseName}</h3>
                 <p className='text-white'>
@@ -85,11 +85,11 @@ export function CourseDetail(props) {
                         <div className="courses_sidebar">
                             <div className="video_thumb">
                                 <img src={props.detail.Poster} alt="" className="rounded grow" />
-                                <a className="popup-video" href="#">
+                                <Link to="#" className="popup-video">
                                     <i className="fa fa-play"></i>
-                                </a>
+                                </Link>
                             </div><br />
-                            <a href="#" className="boxed_btn grow">Buy Course</a>
+                            <div className="boxed_btn grow">Buy Course</div>
 
                         </div>
                     </div>
@@ -102,7 +102,7 @@ export function CourseDetail(props) {
 
 export function Loading() {
     return (
-        <div className="pa4 tc mt7">
+        <div className="pa4 tc mt4">
             <div className="loadingio-spinner-ripple-0v3oh6mzkud"><div className="ldio-vdu6f5do0l">
                 <div></div><div></div>
             </div></div>
@@ -121,9 +121,7 @@ export function Footer() {
                         <div className="col-xl-5 mx-auto col-md-6 col-lg-4">
                             <div className="footer_widget">
                                 <div className="footer_logo">
-                                    <a href="#">
-                                        <img src="img/logo.png" alt="" />
-                                    </a>
+                                    <img src="img/logo.png" alt="" />
                                 </div>
                                 <p>
                                     Firmament morning sixth subdue darkness creeping gathered divide our let god moving.
@@ -162,3 +160,20 @@ export function Footer() {
         </footer>
     )
 }
+
+export function ShowAlert(props) {
+    if(props.show){
+    return (
+        <div className="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{props.heading}</strong><br/> {props.message}
+            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                {/* <span aria-hidden="true">&times;</span> */}
+            </button>
+        </div>
+    )
+}
+else{
+    return '';
+}
+}
+

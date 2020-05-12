@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Nav';
+import { Link } from "react-router-dom";
+import {Footer } from './Components';
 
 
 export default class Home extends Component {
@@ -21,7 +23,7 @@ export default class Home extends Component {
                                         <h3>Learn your <br />
                         Favorite Course <br />
                             From Online</h3>
-                                        <a href="#" className="boxed_btn">Browse Our Courses</a>
+                                        <Link to="courses" className="boxed_btn">Browse Our Courses</Link>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +41,7 @@ export default class Home extends Component {
                                     <p>Our set he for firmament morning sixth subdue darkness creeping gathered divide our let god
                                     moving. Moving in fourth air night bring upon you’re it beast let you dominion likeness open
                             place day great wherein heaven sixth lesser subdue fowl </p>
-                                    <a href="#" className="boxed_btn">Enroll a Course</a>
+                                    <Link to="courses" className="boxed_btn">Enroll a Course</Link>
                                 </div>
                             </div>
                             <div className="col-xl-6 offset-xl-1 col-lg-6">
@@ -75,6 +77,7 @@ export default class Home extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }

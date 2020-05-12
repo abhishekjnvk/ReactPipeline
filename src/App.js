@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter } from 'react-router-dom'
-import { Link } from "react-router-dom";
+// import { HashRouter } from 'react-router-dom'
 
 import {
   BrowserRouter as Router,
@@ -9,10 +8,10 @@ import {
 } from "react-router-dom";
 import { IfLoggedIN, Logout, CheckLogin } from './comp/CheckLogin'
 import Home from './comp/Home'
-import Dashboard from './comp/Dashboard'
 import Profile from './comp/Profile';
 import Courses from './comp/Course';
 import CoursePage from './comp/CoursePage';
+import Auth from './comp/Auth';
 
 class App extends Component {
   render() {
@@ -27,18 +26,20 @@ class App extends Component {
               <IfLoggedIN cmp={Home} />
             </Route>
             <Route exact path="/dashboard" >
-              <CheckLogin cmp={Dashboard} />
+              <CheckLogin cmp={Home} />
             </Route>
             <Route exact path="/profile" >
-              <CheckLogin cmp={Profile} />
+              {/* <CheckLogin cmp={Profile} /> */}
+              <Profile/>
             </Route>
 
             <Route exact path="/view/:id" component={CoursePage} />
-
             <Route exact path="/courses" >
               <Courses />
             </Route>
-            {/* <Route path="*" component={Home} /> */}
+            <Route exact path="/Auth" >
+              <Auth />
+            </Route>
 
           </Switch>
 

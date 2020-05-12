@@ -1891,7 +1891,7 @@ h3 {
   background-size: cover;
   background-position: center center;
   text-align: center;
-  padding: 269px 0 159px 0;
+  padding: 169px 0 100px 0;
 }
 
 @media (max-width: 767px) {
@@ -1932,7 +1932,7 @@ h3 {
 }
 
 /* line 34, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_bradcam.scss */
-.bradcam_area2 {
+.bradcam_area2 {borderborder
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3075,6 +3075,7 @@ h3 {
 /* line 114, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */
 .courses_details_info .courses_sidebar .video_thumb img {
   width: 100%;
+  border:1px solid ;
 }
 
 /* line 117, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_course_details.scss */

@@ -24,7 +24,7 @@ export default class Courses extends Component {
       .then((response) => response.text())
       .then((responseText) => {
         var response = JSON.parse(responseText)
-        console.log(response);
+        // console.log(response);
         if (response.response) {
           this.setState({ course: response.course })
           this.setState({ loading: false })
@@ -41,12 +41,14 @@ export default class Courses extends Component {
   }
   render() {
     if (this.state.loading) {
-      { this.login() }
+      this.login()
       return (<div>
         <Navbar />
         <div className="slider_area ">
           <Header title={"All Courses"} />
           <Loading />
+          <Footer />
+
         </div>
       </div>)
     }

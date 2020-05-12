@@ -29,8 +29,8 @@ class App extends Component {
               <CheckLogin cmp={Home} />
             </Route>
             <Route exact path="/profile" >
-              {/* <CheckLogin cmp={Profile} /> */}
-              <Profile/>
+              <CheckLogin cmp={Profile} />
+              {/* <Profile/> */}
             </Route>
 
             <Route exact path="/view/:id" component={CoursePage} />

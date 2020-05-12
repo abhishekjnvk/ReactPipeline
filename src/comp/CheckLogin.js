@@ -27,5 +27,7 @@ export function IfLoggedIN(props) {
 
 export function Logout() {
     localStorage.clear();
+    cookies.remove('Token', { path: '/' });
+    cookies.remove('LoginMessage', { path: '/' });
     return <Redirect to='/' />
 }

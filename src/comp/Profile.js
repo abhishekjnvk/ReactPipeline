@@ -6,11 +6,16 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 export default class Profile extends Component {
-    state = {
-        email: '',
-        name: '',
-        loading: true
-    };
+    _isMounted = false;
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            email: '',
+            name: '',
+            loading: true
+        };
+    }
     fetchProfileDetail() {
 
         let token_cookie = (cookies.get('Token'))
@@ -35,6 +40,7 @@ export default class Profile extends Component {
             })
     }
     render() {
+
         if (this.state.loading) {
             return <div>
                 <Navbar />
@@ -46,36 +52,35 @@ export default class Profile extends Component {
         return (
             <div>
                 <Navbar />
-                <div className="slider_area mb5">
-
-                    <Header title={"My Profile"} />
-                    <div className="col-lg-4 mx-auto rounded mt-5 border border-dark p-5">
-                        <div className="mt-10">
-                            <div className="ml-2 text-left">
-                                <label className="text-dark">
-                                    Name
+                {/* <div className="slider_area mb5"> */}
+                <Header title={"My Profile"} />
+                <div className="col-lg-4 mx-auto mb-5 rounded mt-5 border border-dark p-5">
+                    <div className="mt-10">
+                        <div className="ml-2 text-left">
+                            <label className="text-dark">
+                                Name
                                     </label>
-                            </div>
-                            <input type="text" className="single-input border rounded" value={this.state.name} onChange={(e) => { this.setState({ name: e.target.value }) }} disabled />
                         </div>
-                        <div className="mt-10">
-                            <div className="ml-2 text-left">
-                                <label className="text-dark">
-                                    Email
+                        <input type="text" className="single-input border rounded" value={this.state.name} onChange={(e) => { this.setState({ name: e.target.value }) }} disabled />
+                    </div>
+                    <div className="mt-10">
+                        <div className="ml-2 text-left">
+                            <label className="text-dark">
+                                Email
                                     </label>
-                            </div>
-                            <input type="text" className="single-input border rounded" value={this.state.email} onChange={(e) => { this.setState({ email: e.target.value }) }} disabled />
                         </div>
-                        <div className="mt-10">
-                            <div className="ml-2 text-left">
-                                <label className="text-dark">
-                                    User Type
+                        <input type="text" className="single-input border rounded" value={this.state.email} onChange={(e) => { this.setState({ email: e.target.value }) }} disabled />
+                    </div>
+                    <div className="mt-10">
+                        <div className="ml-2 text-left">
+                            <label className="text-dark">
+                                User Type
                                     </label>
-                            </div>
-                            <input type="text" className="single-input border rounded" value={this.state.userType} disabled />
                         </div>
+                        <input type="text" className="single-input border rounded" value={this.state.userType} disabled />
                     </div>
                 </div>
+                {/* </div> */}
                 <Footer />
 
             </div>

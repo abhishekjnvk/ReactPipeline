@@ -40,8 +40,8 @@ export default class Navbar extends Component {
                                                         </li> */}
                                                     {(() => {
                                                         var token = cookies.get('Token');
-                                                        console.log(token)
-                                                        if (token == undefined) {
+                                                        // console.log(token)
+                                                        if (token === undefined) {
                                                             return (
                                                                 <li> <Link className="active" to="/Auth">Login/Register</Link></li>
                                                             )

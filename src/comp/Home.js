@@ -50,7 +50,7 @@ export default class Home extends Component {
                                         <div className="inner_courses">
                                             <div className="text_info">
                                                 <span>20+</span>
-                                                <p> Courses</p>
+                                                <p> Tutors</p>
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@ export default class Home extends Component {
                                         <div className="inner_courses">
                                             <div className="text_info">
                                                 <span>7638</span>
-                                                <p> Courses</p>
+                                                <p> Videos</p>
                                             </div>
 
                                         </div>

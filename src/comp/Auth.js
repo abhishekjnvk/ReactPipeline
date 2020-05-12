@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Nav';
 import { Header, Footer, ShowAlert } from './Components';
 import { Button } from 'react-bootstrap';
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
@@ -48,10 +48,11 @@ export default class Auth extends Component {
 
             cookies.set('Token',response.token , { path: '/' });
             cookies.set('LoginMessage',JSON.stringify(response) , { path: '/' });
-            return (<Redirect to="/" />);
+            console.log("LoggedIN")
+            window.location='/';
           }
           else {
-            this.setState({ alert_title: "Success", alert_message: response.message, alert: true })
+            this.setState({ alert_title: "Failed", alert_message: response.message, alert: true })
           }
         })
         .catch((error) => {
@@ -159,7 +160,7 @@ export default class Auth extends Component {
                       Name
                  </label>
                   </div>
-                  <input type="text" id="abhishek" className="single-input border rounded" placeholder="Enter Name" onChange={(e) => { this.setState({ signup_name: e.target.value }) }} />
+                  <input type="text" className="single-input border rounded" placeholder="Enter Name" onChange={(e) => { this.setState({ signup_name: e.target.value }) }} />
                 </div>
                 <div className="mt-10">
                   <div className="ml-2 text-left">

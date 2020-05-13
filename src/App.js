@@ -40,6 +40,7 @@ class App extends Component {
             <Route exact path="/Auth" >
               <Auth />
             </Route>
+            <Route component={Home} />
 
           </Switch>
 
